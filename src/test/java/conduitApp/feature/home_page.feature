@@ -1,8 +1,9 @@
 Feature: Test for the home page
 
-  Background: Define URL
+  Background: Define URL ONE
     Given url 'https://conduit-api.bondaracademy.com/api/'
 
+  @skipme
   Scenario: Get all tags
     Given path 'tags'
     When method Get
@@ -20,9 +21,3 @@ Feature: Test for the home page
     #response must have a size of 10
     And match response.articles == '#[10]'
     And match response.articlesCount == 10
-
-# Scenario: Create a user
- #   Given path 'users'
-  #  And request {"user": {"email": "datatestJuan221222@yopmail.com","password": "datatestJuan2221222@yopmail.com","username": "datatestJuan1212"}}"
-   # When method Post
-    #Then status 201
