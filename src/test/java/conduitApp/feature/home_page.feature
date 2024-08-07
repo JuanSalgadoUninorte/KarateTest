@@ -1,7 +1,7 @@
 Feature: Test for the home page
 
   Background: Define URL ONE
-    Given url 'https://conduit-api.bondaracademy.com/api/'
+    Given url apiURL
 
   @skipme
   Scenario: Get all tags
