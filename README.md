@@ -7,7 +7,7 @@ mvn test
 ```
 #### Esta es una ejecución específica
 ```bash
-mvn test -Dkarate.options="-t=@debug"
+mvn test -Dkarate.options="-t=@JustThisTest"
 ```
 ### Omisiones
 Saltar un escenario, el "~" significa que debe omitir el escenario señalado.
