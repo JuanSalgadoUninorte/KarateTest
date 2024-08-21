@@ -1,3 +1,4 @@
+@SoloUnaPrueba2
 Feature: Sign Up a new user
 
   Background: Preconditions
@@ -6,7 +7,6 @@ Feature: Sign Up a new user
     * def rEmail = dataGenerator.getRandomEmail()
     Given url apiURL
 
-  @SoloUnaPrueba
   Scenario: New user sign up
     #Given def userData = {email: "jj11@yopmail.com", password: "jj11@yopmail.com", username: "jj11@yopmail.com"}
     * def jsFunc =
@@ -57,8 +57,6 @@ Feature: Sign Up a new user
     }
     """
 
-
-  @SoloUnaPrueba2
   Scenario Outline: New user sign up - Outline
     Given path 'users'
     And request
