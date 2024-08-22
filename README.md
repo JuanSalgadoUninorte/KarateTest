@@ -7,7 +7,7 @@ mvn test
 ```
 #### Esta es una ejecución específica
 ```bash
-mvn test -Dkarate.options="-t=@Nueve"
+mvn test -Dkarate.options="-t=@SoloUnaPrueba2"
 ```
 #### Esta es una ejecución específica en un ambiente específico
 ```bash

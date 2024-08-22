@@ -1,4 +1,3 @@
-@SoloUnaPrueba2
 Feature: Sign Up a new user
 
   Background: Preconditions
@@ -7,37 +6,39 @@ Feature: Sign Up a new user
     * def rEmail = dataGenerator.getRandomEmail()
     Given url apiURL
 
+  @SoloUnaPrueba2
   Scenario: New user sign up
     #Given def userData = {email: "jj11@yopmail.com", password: "jj11@yopmail.com", username: "jj11@yopmail.com"}
-    * def jsFunc =
-    """
-      function () {
-        var DataGenerator = Java.type('helpers.DataGenerator')
-        var generator = new DataGenerator()
-        return generator.getRandomUsernameNonStatic()
-      }
-    """
-    * def randomUsernameNonStatic = call jsFunc
+    #* def jsFunc =
+    #"""
+    #  function () {
+    #    var DataGenerator = Java.type('helpers.DataGenerator')
+    #    var generator = new DataGenerator()
+    #    return generator.getRandomUsernameNonStatic()
+    #  }
+    #"""
+    #* def randomUsernameNonStatic = call jsFunc
     Given path 'users'
     #One line od data
       # And request { user: {email: "#(userData.email)", password: "#(userData.password)", username: "userData.username"} }
     #multidata line
+    * print rEmail
     And request
-    #"""
-    #  {
-    #    "user": {
-    #      "email": "#(userData.email)",
-    #      "password": "#(userData.password)",
-    #      "username": "#(userData.username)"
-    #    }
-    #  }
-    #"""
+#    """
+#      {
+#        "user": {
+#          "email": "#(userData.email)",
+#          "password": "#(userData.password)",
+#          "username": "#(userData.username)"
+#        }
+#      }
+#    """
     """
       {
         "user": {
           "email": "#(rEmail)",
           "password": "#(userData.password)",
-          "username": "#(randomUsernameNonStatic)"
+          "username": "#(rUsername)"
         }
       }
     """
@@ -49,7 +50,7 @@ Feature: Sign Up a new user
       "user": {
           "id": '#number',
           "email":  "#(rEmail)",
-          "username": "#(randomUsernameNonStatic)",
+          "username": "#(rUsername)",
           "bio": null,
           "image": "#string",
           "token": "#string"
