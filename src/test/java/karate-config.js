@@ -19,5 +19,7 @@ function fn() {
   }
   var accessToken = karate.callSingle('classpath:helpers/create_token.feature', config).authToken
   karate.configure('headers', {Authorization: 'Token '+accessToken})
+  karate.configure('connectTimeout', 5000);
+  karate.configure('readTimeout', 5000);
   return config;
 }

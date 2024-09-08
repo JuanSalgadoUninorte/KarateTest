@@ -57,7 +57,7 @@ Feature: Sign Up a new user
       }
     }
     """
-
+  @parallel=false
   Scenario Outline: New user sign up - Outline
     Given path 'users'
     And request
